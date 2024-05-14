@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
+                        <!-- <div class="card-header">
                             <h3 class="card-title">Stok Obat Opname</h3>
 
                             <div class="card-tools">
@@ -43,10 +43,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap">
+                            <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -60,28 +60,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>10192</td>
-                                        <td>Asam Mefenamat tablet 500 mg</td>
-                                        <td>Asam Mefenamat tablet 500 mg</td>
-                                        <td>TABLET</td>
-                                        <td>PT Kalbe Farma</td>
-                                        <td>100</td>
-                                        <td>
-                                            <button data-toggle="modal" data-target="#modal-kartu"
-                                                class="btn btn-secondary"><i class="fas fa-scroll"></i> Kartu</button>
-                                            <button data-toggle="modal" data-target="#modal-detail"
-                                                class="btn btn-info"><i class="fas fa-info"></i> Detail</button>
-                                            <button data-toggle="modal" data-target="#modal-barcode"
-                                                class="btn btn-success"><i class="fas fa-barcode"></i>
-                                                Barcode</button>
-                                            <button data-toggle="modal" data-target="#modal-edit"
-                                                class="btn btn-warning"><i class="fas fa-edit"></i>Edit</button>
-                                            <button data-toggle="modal" data-target="#modal-delete"
-                                                class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
-                                        </td>
-                                    </tr>
+                                    <?php foreach ($barang as $data): ?>
+                                        <tr>
+
+                                            <td>1</td>
+                                            <td><?php echo $data['kode_barang']; ?></td>
+                                            <td><?php echo $data['nama_barang']; ?></td>
+                                            <td><?php echo $data['nama_generik']; ?></td>
+                                            <td><?php echo $data['id_barang_satuan']; ?></td>
+                                            <td><?php echo $data['id_pabrikan']; ?></td>
+                                            <td>100</td>
+                                            <td>
+                                                <button data-toggle="modal" data-target="#modal-kartu"
+                                                    class="btn btn-secondary"><i class="fas fa-scroll"></i> Kartu</button>
+                                                <button data-toggle="modal" data-target="#modal-detail"
+                                                    class="btn btn-info"><i class="fas fa-info"></i> Detail</button>
+                                                <button data-toggle="modal" data-target="#modal-barcode"
+                                                    class="btn btn-success"><i class="fas fa-barcode"></i>
+                                                    Barcode</button>
+                                                <button data-toggle="modal" data-target="#modal-edit"
+                                                    class="btn btn-warning"><i class="fas fa-edit"></i>Edit</button>
+                                                <button data-toggle="modal" data-target="#modal-delete"
+                                                    class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
 
                                     <!-- Modal Detail -->
                                     <div class="modal fade" id="modal-detail" style="display: none;" aria-hidden="true">
@@ -399,7 +402,7 @@
                                                                 Detail</button>
                                                         </div>
                                                     </div>
-\
+                                                    \
                                                 </div>
                                                 <div class="modal-footer justify-content-between">
                                                     <button type="button" class="btn btn-default"
