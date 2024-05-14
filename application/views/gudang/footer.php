@@ -1,10 +1,28 @@
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-inline">
-      Balkesmas Semarang
-    </div>
-    <strong>Si Odang &copy; 2024 
-  </footer>
+<footer class="main-footer">
+  <div class="float-right d-none d-sm-inline">
+    Balkesmas Semarang
+  </div>
+  <strong>Si Odang &copy; 2024
+</footer>
 </div>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 
 <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url() ?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -19,15 +37,16 @@
 <script src="<?php echo base_url() ?>assets/plugins/jquery-knob/jquery.knob.min.js"></script>
 <script src="<?php echo base_url() ?>assets/plugins/moment/moment.min.js"></script>
 <script src="<?php echo base_url() ?>assets/plugins/daterangepicker/daterangepicker.js"></script>
-<script src="<?php echo base_url() ?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script
+  src="<?php echo base_url() ?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <script src="<?php echo base_url() ?>assets/plugins/summernote/summernote-bs4.min.js"></script>
 <script src="<?php echo base_url() ?>assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script src="<?php echo base_url() ?>assets/dist/js/adminlte.js"></script>
 <script src="<?php echo base_url() ?>assets/dist/js/pages/dashboard.js"></script>
 <script src="<?php echo base_url() ?>assets/dist/js/demo.js"></script>
-  <!-- End custom js for this page-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!-- End custom js for this page-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <!-- DataTables -->
 <script src="<?php echo base_url() ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url() ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -57,7 +76,7 @@
       //detect type
       var $this = $(this).find('a > i')
       var glyph = $this.hasClass('glyphicon')
-      var fa    = $this.hasClass('fa')
+      var fa = $this.hasClass('fa')
 
       //Switch states
       if (glyph) {
@@ -104,16 +123,16 @@
     //Date range as a button
     $('#daterange-btn').daterangepicker(
       {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
         },
         startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
+        endDate: moment()
       },
       function (start, end) {
         $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
@@ -124,7 +143,7 @@
     $('#timepicker').datetimepicker({
       format: 'LT'
     })
-    
+
     //Bootstrap Duallistbox
     $('.duallistbox').bootstrapDualListbox()
 
@@ -133,11 +152,11 @@
     //color picker with addon
     $('.my-colorpicker2').colorpicker()
 
-    $('.my-colorpicker2').on('colorpickerChange', function(event) {
+    $('.my-colorpicker2').on('colorpickerChange', function (event) {
       $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
     });
 
-    $("input[data-bootstrap-switch]").each(function(){
+    $("input[data-bootstrap-switch]").each(function () {
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     });
 
@@ -153,4 +172,5 @@
   })
 </script>
 </body>
+
 </html>

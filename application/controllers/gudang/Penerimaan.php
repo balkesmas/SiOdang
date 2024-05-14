@@ -20,6 +20,5 @@ class Penerimaan extends CI_Controller
 	}
 
 
-
 }
 
